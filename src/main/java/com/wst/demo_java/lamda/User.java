@@ -3,9 +3,7 @@ package com.wst.demo_java.lamda;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static java.util.Comparator.comparingInt;
@@ -30,6 +28,13 @@ public class User{
                         (oldValue, newValue) -> oldValue, LinkedHashMap::new));
         // 排序后
         map.forEach((key, value) -> System.out.println("key: " + key + ", value:" + value));
+
+        List<String> result = map.keySet().stream().collect(Collectors.toList());
+        result.forEach(System.out::println);
+
+        List<User> list = map.entrySet().stream().sorted(Comparator.comparing(e -> e.getKey()))
+                .map(e -> new User(e.getKey(), 5)).collect(Collectors.toList());
+        list.forEach(System.out::println);
     }
 
 }
