@@ -84,6 +84,11 @@ public class LamdaTest {
                 collect(Collectors.minBy(Comparator.comparing(Apple::getMoney)));
         minApple.ifPresent(System.out::println);
 
+        //求平均值
+        BigDecimal average = appleList.stream().map(Apple::getMoney)
+                .reduce(BigDecimal.ZERO, BigDecimal::add)
+                .divide(BigDecimal.valueOf(appleList.size()), 2, BigDecimal.ROUND_HALF_UP);
+        System.err.println("average"+average);
         /*6.去重*/
 // 根据id去重
         //根据id去重
