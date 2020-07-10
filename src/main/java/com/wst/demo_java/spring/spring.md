@@ -44,6 +44,6 @@ public class TestServiceImpl {
         this.userDao = userDao;
     }
 }
-复制代码
-复制代码
+
 注：最好是将@Resource放在setter方法上，因为这样更符合面向对象的思想，通过set、get去操作属性，而不是直接去操作属性。
+
