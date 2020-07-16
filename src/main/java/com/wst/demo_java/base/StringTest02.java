@@ -1,3 +1,5 @@
+package com.wst.demo_java.base;
+
 public class StringTest02 {
 
     public static void main(String[] args) {
@@ -5,7 +7,7 @@ public class StringTest02 {
         String s1 = "hello";
         String s2 = "hello";
 
-        String s = aaa "+" bbb "+" ccc "常量池
+        String s = "aaa"+"bbb"+"ccc";
 
 //因为使用了字符串常量池
         System.out.println(s1 == s2);
